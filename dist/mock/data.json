@@ -1,0 +1,56 @@
+[
+    {
+        "image": "/source/song_6.jpg",
+        "audio": "/source/song_6.mp3",
+        "song": "如昨",
+        "album": "如昨",
+        "singer": "刘惜君",
+        "duration": 305,
+        "isLike": true
+    },
+    {
+        "image": "/source/song_4.jpg",
+        "audio": "/source/song_4.mp3",
+        "song": "偕老",
+        "album": "偕老",
+        "singer": "胡夏",
+        "duration": 274,
+        "isLike": true
+    },
+    {
+        "image": "/source/song_5.jpg",
+        "audio": "/source/song_5.mp3",
+        "song": "星球坠落",
+        "album": "星球坠落",
+        "singer": "艾热/李佳隆",
+        "duration": 168,
+        "isLike": true
+    },
+    {
+        "image": "/source/song_1.jpg",
+        "audio": "/source/song_1.mp3",
+        "song": "丑八怪",
+        "album": "意外",
+        "singer": "薛之谦",
+        "duration": 253,
+        "isLike": true
+    },
+    {
+        "image": "/source/song_2.jpg",
+        "audio": "/source/song_2.mp3",
+        "song": "小半",
+        "album": "小梦大半",
+        "singer": "陈粒",
+        "duration": 297,
+        "isLike": false
+    },
+    {
+        "image": "/source/song_3.jpg",
+        "audio": "/source/song_3.mp3",
+        "song": "Shape of You",
+        "album": "÷",
+        "singer": "ed sheeran",
+        "duration": 235,
+        "isLike": false
+    }
+]
