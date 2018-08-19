@@ -25,6 +25,7 @@
 	}
 	// 更新进度条的位置和当前时间
 	function update(per) {
+		cancelAnimationFrame(frameId);
 		var perTage = (per - 1)*100 + '%';
 		if (duration+parseInt(perTage)*duration/100 == duration) {
 			audio.status = 'pause';
@@ -42,6 +43,7 @@
 	//时间暂停，进度条暂停移动
 	function stop () {
 		var stopTime = new Date().getTime();//点击暂停的时间。
+		//                        ms                  s
 		lastPer = lastPer + (stopTime - startTime) /(duration * 1000);//暂停之前的百分比
 		cancelAnimationFrame(frameId);
 	}

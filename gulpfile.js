@@ -57,6 +57,7 @@ gulp.task("css",function(){
     .pipe(gulp.dest(folder.dist + "css/"))
 })
 gulp.task("watch",function(){
+    // 监听文件有变化的时候，执行回调函数。['html']
     gulp.watch(folder.src + "html/*",["html"]);
     gulp.watch(folder.src + "images/*",["images"]);
     gulp.watch(folder.src + "js/*",["js"]);
@@ -64,7 +65,7 @@ gulp.task("watch",function(){
 })
 gulp.task("server",function(){
     connect.server({
-        port : "8088",
+        port : "8080",
         livereload : true
     });
 })

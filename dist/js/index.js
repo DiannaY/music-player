@@ -29,9 +29,9 @@ getData('../mock/data.json');
 function bindEvent(data) {
 	//为document绑定play:change事件，当点击切换歌曲的话，就触发这个事件去获取资源、渲染页面、
 	$scope.on('play:change',function (e,index) {
-		render(data[index]);
-		audio.getAudio(data[index]);
-		root.pro.renderAllTime(data[index].duration);
+		render(data[index]);//渲染第几首歌曲的数据
+		audio.getAudio(data[index]);//创建audio标签并加载音频资源，利用构造函数实现
+		root.pro.renderAllTime(data[index].duration);//渲染进度条的总时间
 		if (audio.status == 'play') {
 			audio.play();
 			root.pro.start(0);
@@ -93,8 +93,8 @@ function bindTouch(data) {
 		}
 		//跳到当前这首歌对应的位置
 		var time = data[control.index].duration * per;
-		audio.playTo(time);
-		$('.play-btn').addClass('playing');//拖到指定位置，播放对应音乐
-		root.pro.start(per);
+		audio.playTo(time);//拖到指定位置，从该时间开始播放音乐
+		$('.play-btn').addClass('playing');//将暂停按钮改为播放按钮
+		root.pro.start(per);//进度条开始从当前位置所占百分比移动。
 	})
 }

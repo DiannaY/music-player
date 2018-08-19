@@ -22,7 +22,6 @@
 			this.audio.currentTime = time;
 			this.play();
 		}
- 
 	}
 	root.audioManager = audioManager;
 })(window.Zepto,window.player || (window.player = {}))

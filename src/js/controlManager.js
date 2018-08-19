@@ -3,7 +3,6 @@
 	function controlManager(len) {
 		this.len = len;
 		this.index = index;
-		this.status = status;
 	}
 	controlManager.prototype = {
 		prev : function () {
