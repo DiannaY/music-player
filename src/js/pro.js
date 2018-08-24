@@ -25,7 +25,7 @@
 	}
 	// 更新进度条的位置和当前时间
 	function update(per) {
-		cancelAnimationFrame(frameId);
+		// cancelAnimationFrame(frameId);
 		var perTage = (per - 1)*100 + '%';
 		if (duration+parseInt(perTage)*duration/100 == duration) {
 			audio.status = 'pause';

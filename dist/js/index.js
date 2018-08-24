@@ -6,7 +6,6 @@ var audio = new root.audioManager();
 var w = $('.pro-bottom').width();
 var $scope = $(document.body);
 var $slider = $('.slider-point');
-
 function getData(url) {
 	$.ajax({
 		type : 'GET',
@@ -32,6 +31,7 @@ function bindEvent(data) {
 		render(data[index]);//渲染第几首歌曲的数据
 		audio.getAudio(data[index]);//创建audio标签并加载音频资源，利用构造函数实现
 		root.pro.renderAllTime(data[index].duration);//渲染进度条的总时间
+		console.log(audio.status)
 		if (audio.status == 'play') {
 			audio.play();
 			root.pro.start(0);
@@ -83,6 +83,7 @@ function bindTouch(data) {
 			per = 0
 		}
 		$('.play-btn').removeClass('playing');
+		audio.pause();
 		root.pro.update(per);
 	}).on('touchend',function (e) {
 		// 播放当前结束时间点对应的音乐

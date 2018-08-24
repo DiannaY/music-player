@@ -6,12 +6,11 @@ var stripDebug = require("gulp-strip-debug");
 var concat = require("gulp-concat");
 var deporder = require("gulp-deporder");
 var less = require("gulp-less");
-
+var fx = require('fx');
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 var connect = require("gulp-connect");
-
 
 var folder = {
     src : "./src/",
