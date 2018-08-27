@@ -27,15 +27,16 @@
 	function update(per) {
 		// cancelAnimationFrame(frameId);
 		var perTage = (per - 1)*100 + '%';
-		if (duration+parseInt(perTage)*duration/100 == duration) {
-			audio.status = 'pause';
-			$('.play-btn').removeClass('playing');
-			$('.play-btn').on('click',function () {
-				audio.status = 'play';
-				start(0);
-			})
-			$('.img-wrapper')[0].style.animationPlayState = 'paused'
-		}
+		// if (duration+parseInt(perTage)*duration/100 == duration) {
+		// 	audio.pause();
+		// 	per = 0;
+		// 	audio.audio.currentTime = 0;
+		// 	// $('.play-btn').on('click',function () {
+		// 	// 	audio.status = 'play';
+		// 	// 	audio.audio.currentTime = 0 ;
+		// 	// 	start(0);
+		// 	// })
+		// }
 		$('.pro-top').css('transform','translateX('+perTage+')');
 		var time = formatTime(duration * per);
 		$('.cur-time').html(time)
@@ -55,6 +56,11 @@
 		function frame () {
 			var endTime = new Date().getTime();
 			var per = lastPer + (endTime - startTime) / (duration*1000);
+			if (Math.floor(per)*duration == duration) {
+				audio.pause();
+				per = 0;
+				audio.audio.currentTime = 0;
+			}
 			if (per <= 1) {
 				update(per);
 				frameId = requestAnimationFrame(frame);

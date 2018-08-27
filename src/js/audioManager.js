@@ -11,11 +11,13 @@
 		play : function () {
 			this.audio.play();
 			this.status = 'play';
+			$('.play-btn').addClass('playing');
 			$('.img-wrapper')[0].style.animationPlayState = 'running';
 		},
 		pause : function () {
 			this.audio.pause();
 			this.status = 'pause';
+			$('.play-btn').removeClass('playing');
 			$('.img-wrapper')[0].style.animationPlayState = 'paused';
 		},
 		playTo : function (time) {

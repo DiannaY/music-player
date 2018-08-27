@@ -31,10 +31,10 @@ function bindEvent(data) {
 		render(data[index]);//渲染第几首歌曲的数据
 		audio.getAudio(data[index]);//创建audio标签并加载音频资源，利用构造函数实现
 		root.pro.renderAllTime(data[index].duration);//渲染进度条的总时间
-		console.log(audio.status)
 		if (audio.status == 'play') {
 			audio.play();
 			root.pro.start(0);
+			
 		}
 		root.pro.update(0);
 	})
@@ -49,12 +49,16 @@ function bindEvent(data) {
 	$('.play-btn').on('click',function () {
 		if (audio.status == 'pause') {
 			audio.play();
-			root.pro.start();
+			if (audio.audio.currentTime == 0) {
+				root.pro.start(0);
+			}else {
+				root.pro.start();
+			}
 		}else {
 			audio.pause();
 			root.pro.stop();
 		}
-		$(this).toggleClass('playing');
+		// $(this).toggleClass('playing');
 	})
 	$('.like-btn').on('click',function () {
 		$(this).toggleClass('liking');
